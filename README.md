@@ -8,11 +8,11 @@ Group name: **Five Bits**
 
 | Name | Matriculation number |
 |---|---|
-| Dhruv Savani | `[TODO: matriculation number]` |
-| Harshil Zadafiya | `[TODO: matriculation number]` |
+| Dhruv Savani | 4108973` |
+| Harshil Zadafiya | 7402465 |
 | Jevin Vaghasiya | `[TODO: matriculation number]` |
-| Pooja Garg | `[TODO: matriculation number]` |
-| Yashik Khunt | `[TODO: matriculation number]` |
+| Pooja Garg | 4014197 |
+| Yashik Khunt | 4014351 |
 
 ## Access to the UPB AI Gateway (do this first)
 
