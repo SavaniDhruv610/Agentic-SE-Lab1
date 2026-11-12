@@ -2,6 +2,18 @@
 
 Starter material for Lab 1. The tasks, deadlines and grading are described on the lab sheet.
 
+## Team
+
+Group name: **Five Bits**
+
+| Name | Matriculation number |
+|---|---|
+| Dhruv Savani | `[TODO: matriculation number]` |
+| Harshil Zadafiya | `[TODO: matriculation number]` |
+| Jevin Vaghasiya | `[TODO: matriculation number]` |
+| Pooja Garg | `[TODO: matriculation number]` |
+| Yashik Khunt | `[TODO: matriculation number]` |
+
 ## Access to the UPB AI Gateway (do this first)
 
 Every group member needs their own API key. Official guide: https://hilfe.uni-paderborn.de/AI-Gateway
@@ -36,6 +48,85 @@ uv run python common/hello_gateway.py
 ```
 
 Run all commands from this directory (the repository root).
+
+## How to run everything
+
+Prerequisites: the virtualenv is installed, `.env` contains your key, and you are in the
+university network or on the UPB VPN. Commands below use `.venv/bin/python`; replace it with
+`uv run python` if you use `uv`.
+
+### Task 1 – OpenCode setup and team website
+
+Task 1 is interactive and per member; see `task1_opencode/README.md` for the full guide.
+
+```bash
+cd task1_opencode
+opencode                  # create hello.py, then work on the team website
+# save the exported session under task1_opencode/conversation/
+cd ..
+```
+
+### Task 2 – Own agent
+
+```bash
+.venv/bin/python task2_own_agent/agent.py \
+  --content task1_opencode/content \
+  --out task2_own_agent/site/index.html \
+  --group "Five Bits"
+```
+
+The agent prompts for human feedback after it finishes; press Enter on an empty line to end.
+
+### Task 3 – RAG
+
+```bash
+# Final configuration (R5) on the dev split
+.venv/bin/python task3_rag/pipeline.py --config r5 --split dev \
+  --chunk-size 160 --overlap 32 --alpha 0.7 --forum-penalty 0.03 \
+  --out task3_rag/results/retrieval_r5_160_a07_pen03_dev.jsonl \
+  --timing task3_rag/results/timing_r5_160_a07_pen03_dev.json \
+  --rewrite-cache .cache/task3_rag/rewrites/rewrites_v1.jsonl
+
+# Retrieval metrics
+.venv/bin/python task3_rag/evaluate.py \
+  task3_rag/results/retrieval_r5_160_a07_pen03_dev.jsonl --k 5 \
+  --json task3_rag/results/metrics_r5_160_a07_pen03_dev.json
+
+# Generated answers + LLM judge sample
+.venv/bin/python task3_rag/generate.py \
+  task3_rag/results/retrieval_r5_160_a07_pen03_dev.jsonl --split dev \
+  --out task3_rag/results/answers_r5_dev.jsonl \
+  --log task3_rag/results/logs/generate_r5_dev.jsonl
+.venv/bin/python task3_rag/judge.py task3_rag/results/answers_r5_dev.jsonl \
+  --sample 50 --out task3_rag/results/judge_r5_dev.jsonl
+```
+
+The submitted test predictions are in `task3_rag/predictions_test.jsonl`.
+
+### Task 4 – Tool-using agent
+
+```bash
+# 0. Optional connectivity check
+.venv/bin/python common/hello_gateway.py
+
+# 1. Fresh workspace + real model run
+.venv/bin/python task4_tools/reset_workspace.py
+.venv/bin/python task4_tools/agent.py
+
+# 2. Save the diff and verify the workspace tests
+git -C task4_tools/workspace diff > task4_tools/final.diff
+.venv/bin/python -m pytest task4_tools/workspace/tests -v
+
+# 3. Report check (expected: Total: 362,30 €)
+cd task4_tools/workspace
+PYTHONPATH=src ../../.venv/bin/python -m tinyledger report data/sample.csv --month 2026-03
+cd ../..
+
+# 4. Tool-layer / adversarial tests
+.venv/bin/python -m pytest task4_tools/tests -v
+```
+
+Use `--mock` (`task4_tools/agent.py --mock`) for an offline deterministic run.
 
 ## Models, budget and limits
 

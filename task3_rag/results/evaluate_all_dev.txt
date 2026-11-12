@@ -1,0 +1,40 @@
+===== retrieval_r1_dev
+retrieval_r1_dev.jsonl  (k=5)
+category         n    recall  precision
+identifier      30     0.933      0.690
+multi-hop       30     0.417      0.661
+paraphrase      30     0.233      0.089
+version         30     0.633      0.633
+OVERALL        120     0.554      0.518
+===== retrieval_r2_dev
+retrieval_r2_dev.jsonl  (k=5)
+category         n    recall  precision
+identifier      30     0.700      0.594
+multi-hop       30     0.083      0.054
+paraphrase      30     0.933      0.728
+version         30     0.700      0.622
+OVERALL        120     0.604      0.500
+===== retrieval_r3_dev
+retrieval_r3_dev.jsonl  (k=5)
+category         n    recall  precision
+identifier      30     0.567      0.544
+multi-hop       30     0.033      0.025
+paraphrase      30     0.833      0.746
+version         30     0.967      0.850
+OVERALL        120     0.600      0.541
+===== retrieval_r4_dev
+retrieval_r4_dev.jsonl  (k=5)
+category         n    recall  precision
+identifier      30     0.867      0.733
+multi-hop       30     0.267      0.517
+paraphrase      30     0.833      0.697
+version         30     0.767      0.655
+OVERALL        120     0.683      0.650
+===== retrieval_r5_dev
+retrieval_r5_dev.jsonl  (k=5)
+category         n    recall  precision
+identifier      30     1.000      1.000
+multi-hop       30     1.000      1.000
+paraphrase      30     0.967      0.797
+version         30     0.933      0.691
+OVERALL        120     0.975      0.872

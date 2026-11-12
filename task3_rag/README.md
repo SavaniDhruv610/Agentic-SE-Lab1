@@ -80,7 +80,7 @@ uv run python task3_rag/judge.py results/answers_r4.jsonl --sample 50 --out resu
 
 ## Test set predictions
 
-Submit `task3_rag/predictions_test.jsonl` with your best configuration, one line per test question:
+Submit `task3_rag/predictions_test.jsonl` with your best confi    guration, one line per test question:
 
 ```json
 {"id": "test001", "answer": "...", "retrieved_doc_ids": ["d0001", "d0002", "d0003", "d0004", "d0005"]}

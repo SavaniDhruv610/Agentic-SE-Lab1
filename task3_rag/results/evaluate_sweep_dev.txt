@@ -1,0 +1,112 @@
+===== retrieval_r3_080_dev
+retrieval_r3_080_dev.jsonl  (k=5)
+category         n    recall  precision
+identifier      30     0.567      0.544
+multi-hop       30     0.033      0.025
+paraphrase      30     0.833      0.746
+version         30     0.967      0.850
+OVERALL        120     0.600      0.541
+===== retrieval_r3_160_dev
+retrieval_r3_160_dev.jsonl  (k=5)
+category         n    recall  precision
+identifier      30     0.567      0.490
+multi-hop       30     0.017      0.033
+paraphrase      30     0.867      0.747
+version         30     0.767      0.596
+OVERALL        120     0.554      0.467
+===== retrieval_r3_320_dev
+retrieval_r3_320_dev.jsonl  (k=5)
+category         n    recall  precision
+identifier      30     0.567      0.507
+multi-hop       30     0.017      0.008
+paraphrase      30     0.933      0.781
+version         30     0.767      0.631
+OVERALL        120     0.571      0.482
+===== retrieval_r4_a03_dev
+retrieval_r4_a03_dev.jsonl  (k=5)
+category         n    recall  precision
+identifier      30     1.000      0.787
+multi-hop       30     0.467      0.694
+paraphrase      30     0.433      0.273
+version         30     0.667      0.640
+OVERALL        120     0.642      0.599
+===== retrieval_r4_a05_dev
+retrieval_r4_a05_dev.jsonl  (k=5)
+category         n    recall  precision
+identifier      30     0.900      0.754
+multi-hop       30     0.450      0.651
+paraphrase      30     0.667      0.458
+version         30     0.667      0.642
+OVERALL        120     0.671      0.626
+===== retrieval_r4_a07_dev
+retrieval_r4_a07_dev.jsonl  (k=5)
+category         n    recall  precision
+identifier      30     0.867      0.733
+multi-hop       30     0.267      0.517
+paraphrase      30     0.833      0.697
+version         30     0.767      0.655
+OVERALL        120     0.683      0.650
+===== retrieval_r5_160_a065_pen03_dev
+retrieval_r5_160_a065_pen03_dev.jsonl  (k=5)
+category         n    recall  precision
+identifier      30     1.000      1.000
+multi-hop       30     1.000      1.000
+paraphrase      30     0.967      0.740
+version         30     0.967      0.691
+OVERALL        120     0.983      0.858
+===== retrieval_r5_160_a07_pen03_dev
+retrieval_r5_160_a07_pen03_dev.jsonl  (k=5)
+category         n    recall  precision
+identifier      30     1.000      1.000
+multi-hop       30     1.000      1.000
+paraphrase      30     0.967      0.797
+version         30     0.933      0.691
+OVERALL        120     0.975      0.872
+===== retrieval_r5_160_a075_pen03_dev
+retrieval_r5_160_a075_pen03_dev.jsonl  (k=5)
+category         n    recall  precision
+identifier      30     1.000      1.000
+multi-hop       30     1.000      1.000
+paraphrase      30     0.967      0.802
+version         30     0.933      0.686
+OVERALL        120     0.975      0.872
+===== retrieval_r5_160_a080_pen03_dev
+retrieval_r5_160_a080_pen03_dev.jsonl  (k=5)
+category         n    recall  precision
+identifier      30     1.000      0.983
+multi-hop       30     1.000      1.000
+paraphrase      30     0.933      0.822
+version         30     0.933      0.675
+OVERALL        120     0.967      0.870
+===== retrieval_r5_160_a085_pen03_dev
+retrieval_r5_160_a085_pen03_dev.jsonl  (k=5)
+category         n    recall  precision
+identifier      30     1.000      0.967
+multi-hop       30     1.000      1.000
+paraphrase      30     0.933      0.808
+version         30     0.933      0.662
+OVERALL        120     0.967      0.859
+===== retrieval_r5_160_a07_pen02_dev
+retrieval_r5_160_a07_pen02_dev.jsonl  (k=5)
+category         n    recall  precision
+identifier      30     1.000      1.000
+multi-hop       30     1.000      1.000
+paraphrase      30     0.967      0.797
+version         30     0.933      0.691
+OVERALL        120     0.975      0.872
+===== retrieval_r5_160_a07_pen04_dev
+retrieval_r5_160_a07_pen04_dev.jsonl  (k=5)
+category         n    recall  precision
+identifier      30     1.000      1.000
+multi-hop       30     1.000      1.000
+paraphrase      30     0.967      0.797
+version         30     0.933      0.691
+OVERALL        120     0.975      0.872
+===== retrieval_r5_160_a07_pen05_dev
+retrieval_r5_160_a07_pen05_dev.jsonl  (k=5)
+category         n    recall  precision
+identifier      30     1.000      1.000
+multi-hop       30     1.000      1.000
+paraphrase      30     0.967      0.797
+version         30     0.933      0.691
+OVERALL        120     0.975      0.872

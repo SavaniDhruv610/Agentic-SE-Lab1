@@ -1,0 +1,95 @@
+{
+  "config": "r5",
+  "split": "dev",
+  "n_questions": 150,
+  "chunk_strategy": "recursive",
+  "chunk_size_tokens": 160,
+  "overlap_tokens": 32,
+  "alpha": 0.5,
+  "forum_penalty": 0.0,
+  "chat_model": "openai.gpt-6-luna",
+  "embedding_model": "kiconnect.qwen3-embedding-8b",
+  "corpus": {
+    "n_documents": 932,
+    "n_by_type": {
+      "changelog": 14,
+      "cli": 36,
+      "config": 170,
+      "error": 77,
+      "forum": 500,
+      "incident": 120,
+      "runbook": 15
+    },
+    "chars_min": 296,
+    "chars_median": 476.5,
+    "chars_mean": 532.5,
+    "chars_p90": 742,
+    "chars_p95": 755,
+    "chars_max": 5214
+  },
+  "chunks": {
+    "n_chunks": 1284,
+    "chunks_per_doc_mean": 1.38,
+    "chunks_per_doc_max": 14,
+    "tokens_min": 62,
+    "tokens_median": 122.0,
+    "tokens_mean": 124.8,
+    "tokens_p95": 158,
+    "tokens_max": 166
+  },
+  "chunking_time_s": 0.517,
+  "bm25_build_time_s": 0.064,
+  "embeddings": {
+    "chunk_vectors": 1284,
+    "dimension": 4096,
+    "cache_hits": 1284,
+    "cache_misses": 0,
+    "embedding_time_s": 0.0,
+    "estimated_tokens": 160227,
+    "backend_time_s": 0.059
+  },
+  "query_embeddings": {
+    "n_texts": 543,
+    "cache_hits": 150,
+    "cache_misses": 393,
+    "embedding_time_s": 11.632,
+    "wall_time_s": 21.293,
+    "estimated_tokens": 6717
+  },
+  "query_rewrite": {
+    "questions": 150,
+    "cache_hits": 0,
+    "cache_misses": 150,
+    "chat_calls": 150,
+    "prompt_tokens": 23754,
+    "completion_tokens": 15075,
+    "cost_usd": 0.0099129,
+    "time_s": 463.8949170250089,
+    "wall_time_s": 465.633
+  },
+  "scoring_time_s": 2.969,
+  "online_time_s": 489.894,
+  "mean_scoring_ms": 19.79,
+  "mean_online_ms": 3265.96,
+  "p50_scoring_ms": 19.7,
+  "p95_scoring_ms": 27.68,
+  "index_build_time_s": 0.64,
+  "llm_usage": {
+    "calls": 157,
+    "prompt_tokens": 23754,
+    "completion_tokens": 15075,
+    "cost_usd": 0.0099129
+  },
+  "name": "r5_pen00",
+  "gateway_log": {
+    "log_path": "/mnt/d/ASE/lab1/task3_rag/results/logs/r5_pen00.jsonl",
+    "chat_calls": 150,
+    "embedding_calls": 1,
+    "chat_cache_hits": 0,
+    "embedding_cache_hits": 0,
+    "prompt_tokens": 23754,
+    "completion_tokens": 15075,
+    "cost_usd": 0.0099129,
+    "duration_s": 473.5260000000002
+  }
+}

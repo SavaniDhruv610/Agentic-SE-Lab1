@@ -1,0 +1,16 @@
+{
+  "retrieval": "task3_rag/results/retrieval_r5_160_a07_pen03_test.jsonl",
+  "split": "test",
+  "n_answers": 100,
+  "new_answers": 100,
+  "resumed": false,
+  "wall_time_s": 183.439,
+  "mean_latency_s": 1.832,
+  "median_latency_s": 1.75,
+  "p95_latency_s": 2.593,
+  "llm_calls": 100,
+  "prompt_tokens": 92826,
+  "completion_tokens": 4258,
+  "cost_usd": 0.0116227,
+  "abstentions": 26
+}

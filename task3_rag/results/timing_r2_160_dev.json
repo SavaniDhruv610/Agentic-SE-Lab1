@@ -1,0 +1,85 @@
+{
+  "config": "r2",
+  "split": "dev",
+  "n_questions": 150,
+  "chunk_strategy": "fixed",
+  "chunk_size_tokens": 160,
+  "overlap_tokens": 32,
+  "alpha": null,
+  "forum_penalty": 0.0,
+  "chat_model": "openai.gpt-6-luna",
+  "embedding_model": "kiconnect.qwen3-embedding-8b",
+  "corpus": {
+    "n_documents": 932,
+    "n_by_type": {
+      "changelog": 14,
+      "cli": 36,
+      "config": 170,
+      "error": 77,
+      "forum": 500,
+      "incident": 120,
+      "runbook": 15
+    },
+    "chars_min": 296,
+    "chars_median": 476.5,
+    "chars_mean": 532.5,
+    "chars_p90": 742,
+    "chars_p95": 755,
+    "chars_max": 5214
+  },
+  "chunks": {
+    "n_chunks": 1249,
+    "chunks_per_doc_mean": 1.34,
+    "chunks_per_doc_max": 12,
+    "tokens_min": 50,
+    "tokens_median": 132,
+    "tokens_mean": 124.3,
+    "tokens_p95": 160,
+    "tokens_max": 160
+  },
+  "chunking_time_s": 2.915,
+  "bm25_build_time_s": 0.0,
+  "embeddings": {
+    "chunk_vectors": 1249,
+    "dimension": 4096,
+    "cache_hits": 0,
+    "cache_misses": 1249,
+    "embedding_time_s": 41.981,
+    "estimated_tokens": 155311,
+    "backend_time_s": 44.518
+  },
+  "query_embeddings": {
+    "n_texts": 150,
+    "cache_hits": 2,
+    "cache_misses": 148,
+    "embedding_time_s": 2.473,
+    "wall_time_s": 7.028,
+    "estimated_tokens": 2758
+  },
+  "query_rewrite": {},
+  "scoring_time_s": 0.639,
+  "online_time_s": 7.667,
+  "mean_scoring_ms": 4.26,
+  "mean_online_ms": 51.12,
+  "p50_scoring_ms": 3.33,
+  "p95_scoring_ms": 9.44,
+  "index_build_time_s": 47.434,
+  "llm_usage": {
+    "calls": 23,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cost_usd": 0.0
+  },
+  "name": "r2_160",
+  "gateway_log": {
+    "log_path": "/mnt/d/ASE/lab1/task3_rag/results/logs/r2_160.jsonl",
+    "chat_calls": 0,
+    "embedding_calls": 2,
+    "chat_cache_hits": 0,
+    "embedding_cache_hits": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cost_usd": 0.0,
+    "duration_s": 44.263
+  }
+}

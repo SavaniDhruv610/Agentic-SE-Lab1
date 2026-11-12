@@ -1,0 +1,14 @@
+{
+  "retrieval": "task3_rag/results/retrieval_r4_a07_dev.jsonl",
+  "split": "dev",
+  "n_answers": 150,
+  "wall_time_s": 502.95,
+  "mean_latency_s": 3.351,
+  "median_latency_s": 2.23,
+  "p95_latency_s": 4.114,
+  "llm_calls": 150,
+  "prompt_tokens": 135024,
+  "completion_tokens": 6634,
+  "cost_usd": 0.01710985,
+  "abstentions": 65
+}

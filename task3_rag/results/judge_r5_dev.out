@@ -1,0 +1,58 @@
+[1/50] dev004 faith=1.0 rel=0.73 correct=1.0
+[2/50] dev008 faith=1.0 rel=0.95 correct=1.0
+[3/50] dev009 faith=1.0 rel=0.97 correct=1.0
+[4/50] dev011 faith=1.0 rel=0.71 correct=1.0
+[5/50] dev012 faith=1.0 rel=0.75 correct=1.0
+[6/50] dev013 faith=None rel=0.41 correct=1.0
+[7/50] dev025 faith=1.0 rel=0.40 correct=1.0
+[8/50] dev030 faith=1.0 rel=0.49 correct=1.0
+[9/50] dev032 faith=1.0 rel=0.39 correct=1.0
+[10/50] dev033 faith=1.0 rel=0.96 correct=1.0
+[11/50] dev037 faith=1.0 rel=0.65 correct=1.0
+[12/50] dev042 faith=1.0 rel=0.48 correct=1.0
+[13/50] dev046 faith=1.0 rel=0.66 correct=1.0
+[14/50] dev047 faith=1.0 rel=0.46 correct=1.0
+[15/50] dev048 faith=1.0 rel=0.71 correct=1.0
+[16/50] dev054 faith=None rel=0.43 correct=1.0
+[17/50] dev059 faith=None rel=0.47 correct=1.0
+[18/50] dev061 faith=1.0 rel=0.97 correct=1.0
+[19/50] dev062 faith=1.0 rel=0.64 correct=1.0
+[20/50] dev065 faith=1.0 rel=0.43 correct=1.0
+[21/50] dev068 faith=1.0 rel=0.46 correct=1.0
+[22/50] dev069 faith=1.0 rel=0.50 correct=1.0
+[23/50] dev073 faith=1.0 rel=0.98 correct=1.0
+[24/50] dev075 faith=None rel=0.43 correct=1.0
+[25/50] dev077 faith=1.0 rel=0.60 correct=1.0
+[26/50] dev079 faith=1.0 rel=0.48 correct=1.0
+[27/50] dev081 faith=1.0 rel=0.95 correct=1.0
+[28/50] dev082 faith=None rel=0.35 correct=1.0
+[29/50] dev083 faith=1.0 rel=0.41 correct=1.0
+[30/50] dev085 faith=1.0 rel=0.59 correct=1.0
+[31/50] dev087 faith=1.0 rel=0.67 correct=1.0
+[32/50] dev088 faith=1.0 rel=0.64 correct=1.0
+[33/50] dev089 faith=1.0 rel=0.39 correct=1.0
+[34/50] dev093 faith=1.0 rel=0.96 correct=1.0
+[35/50] dev095 faith=None rel=0.44 correct=1.0
+[36/50] dev100 faith=0.5 rel=0.60 correct=1.0
+[37/50] dev101 faith=1.0 rel=0.56 correct=1.0
+[38/50] dev105 faith=1.0 rel=0.75 correct=1.0
+[39/50] dev107 faith=None rel=0.45 correct=1.0
+[40/50] dev115 faith=1.0 rel=0.66 correct=1.0
+[41/50] dev119 faith=1.0 rel=0.51 correct=1.0
+[42/50] dev125 faith=1.0 rel=0.88 correct=1.0
+[43/50] dev130 faith=1.0 rel=0.71 correct=1.0
+[44/50] dev132 faith=1.0 rel=0.98 correct=1.0
+[45/50] dev137 faith=None rel=0.34 correct=1.0
+[46/50] dev139 faith=1.0 rel=0.92 correct=1.0
+[47/50] dev142 faith=None rel=0.37 correct=1.0
+[48/50] dev143 faith=None rel=0.45 correct=1.0
+[49/50] dev145 faith=1.0 rel=0.45 correct=1.0
+[50/50] dev147 faith=1.0 rel=0.71 correct=1.0
+category         n  abstained  faithful  relevance  correct
+paraphrase      10      0.000     1.000      0.704    1.000
+identifier      10      0.000     1.000      0.734    1.000
+version         10      0.000     0.950      0.786    1.000
+unanswerable    10      1.000       -        0.414    1.000
+multi-hop       10      0.000     1.000      0.445    1.000
+OVERALL         50      0.200     0.988      0.616    1.000
+faithful: mean over answers with claims (abstentions are not scored)
