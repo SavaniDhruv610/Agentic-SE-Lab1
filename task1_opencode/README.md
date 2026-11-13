@@ -143,3 +143,44 @@ a few cents, and the UI rounds to cents (often `$0.00`). Exact numbers: `opencod
 | Agent can't run Python | Make sure `python` works in the same terminal, or tell the agent to use `python3` / `uv run python` |
 | Tool calls fail with this model | Some models are bad at tool calling. Switch back to `GPT-6 Luna` |
 | `Budget has been exceeded` | Your $20 for this month are used up. Switch to the free fallback model (`/models`) |
+
+---
+
+# Our notes
+
+## Session statistics (prompts, tokens, cost)
+
+Quick totals over all sessions (cost is rounded to cents):
+
+```bash
+opencode stats
+```
+
+Exact numbers per session:
+
+1. List the sessions and copy the id of the one you want:
+   ```bash
+   opencode session list
+   ```
+2. Export it as JSON (run inside `task1_opencode/`):
+   ```bash
+   opencode export <sessionID> > conversation/session_01.json
+   ```
+3. Add up the numbers. In the JSON, every user message is one prompt, and every assistant message has
+   `tokens` (input, output, reasoning, cache read) and `cost` in USD:
+   ```bash
+   python3 - conversation/session_01.json <<'EOF'
+   import json, sys
+   raw = open(sys.argv[1]).read()
+   messages = json.loads(raw[raw.index("{"):])["messages"]
+   answers = [m["info"] for m in messages if m["info"]["role"] == "assistant"]
+   tokens = [a.get("tokens", {}) for a in answers]
+   print("prompts:      ", sum(m["info"]["role"] == "user" for m in messages))
+   print("model calls:  ", len(answers))
+   print("input tokens: ", sum(t.get("input", 0) for t in tokens))
+   print("cached input: ", sum(t.get("cache", {}).get("read", 0) for t in tokens))
+   print("output tokens:", sum(t.get("output", 0) for t in tokens))
+   print("reasoning:    ", sum(t.get("reasoning", 0) for t in tokens))
+   print("cost in USD:  ", round(sum(a.get("cost") or 0 for a in answers), 5))
+   EOF
+   ```

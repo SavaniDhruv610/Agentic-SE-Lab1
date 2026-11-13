@@ -55,27 +55,20 @@ Prerequisites: the virtualenv is installed, `.env` contains your key, and you ar
 university network or on the UPB VPN. Commands below use `.venv/bin/python`; replace it with
 `uv run python` if you use `uv`.
 
-### Task 1 – OpenCode setup and team website
-
-Task 1 is interactive and per member; see `task1_opencode/README.md` for the full guide.
-
+### Task 1 – website built with OpenCode
 ```bash
-cd task1_opencode
-opencode                  # create hello.py, then work on the team website
-# save the exported session under task1_opencode/conversation/
-cd ..
+uv run python task1_opencode/check_site.py task1_opencode/site/index.html --content task1_opencode/content
 ```
+The exported sessions are in `task1_opencode/conversation/`.
+How to get prompts, tokens and cost per session: `task1_opencode/README.md`, section "Session statistics".
 
-### Task 2 – Own agent
-
+### Task 2 – our own agent
 ```bash
-.venv/bin/python task2_own_agent/agent.py \
-  --content task1_opencode/content \
-  --out task2_own_agent/site/index.html \
-  --group "Five Bits"
+uv run pytest task2_own_agent/tests -q                 # offline tests, no gateway needed
+uv run python task2_own_agent/agent.py --content task1_opencode/content --out task2_own_agent/site/index.html
 ```
+Details and design decisions: `task2_own_agent/README.md`.
 
-The agent prompts for human feedback after it finishes; press Enter on an empty line to end.
 
 ### Task 3 – RAG
 

@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en" data-theme="day">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8e7">
+  <title>Team Byte-Sized Brains | Agentic SE Lab</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #fff8e7;
+      --ink: #1d1d1f;
+      --card: #ffffff;
+      --muted: #65636a;
+      --accent: #e4007c;
+      --accent-soft: #ffe0ef;
+      --lime: #d8f36a;
+      --line: #1d1d1f;
+      --shadow: 6px 6px 0 var(--line);
+    }
+    html[data-theme="night"] {
+      color-scheme: dark;
+      --paper: #14142b;
+      --ink: #f4f1de;
+      --card: #20203d;
+      --muted: #c0bfd1;
+      --accent: #ff73bc;
+      --accent-soft: #492443;
+      --lime: #d8f36a;
+      --line: #f4f1de;
+      --shadow: 6px 6px 0 #080817;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    .topbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-block: 1.2rem; }
+    .brand { font-weight: 900; letter-spacing: -.04em; text-decoration: none; }
+    .top-actions { display: flex; align-items: center; gap: 1rem; }
+    .top-actions nav { display: flex; gap: 1rem; font-size: .9rem; font-weight: 750; }
+    button {
+      appearance: none; border: 2px solid var(--line); border-radius: 999px;
+      background: var(--lime); color: #1d1d1f; padding: .65rem 1rem;
+      font: inherit; font-weight: 850; cursor: pointer; box-shadow: 3px 3px 0 var(--line);
+    }
+    button:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .hero { position: relative; padding: clamp(3rem, 8vw, 7rem) 0 4rem; overflow: hidden; }
+    .hero::after { content: "{}"; position: absolute; right: 4%; top: 7%; color: var(--accent); font-size: clamp(7rem, 18vw, 15rem); font-weight: 950; line-height: 1; transform: rotate(10deg); opacity: .16; pointer-events: none; }
+    .eyebrow { display: inline-block; background: var(--lime); color: #1d1d1f; padding: .25rem .7rem; font-size: .78rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; transform: rotate(-2deg); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 820px; margin: 1rem 0; font-size: clamp(3rem, 9vw, 7.5rem); line-height: .91; letter-spacing: -.075em; }
+    h1 span { color: var(--accent); }
+    .hero-copy { max-width: 630px; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.25rem); }
+    .hero-note { display: inline-block; margin-top: .7rem; border-bottom: 3px solid var(--accent); font-weight: 800; transform: rotate(-1deg); }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-bottom: 1.5rem; }
+    .section-head h2, .manifesto h2 { margin-bottom: .3rem; font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1; letter-spacing: -.06em; }
+    .section-head p { max-width: 390px; color: var(--muted); margin-bottom: .3rem; }
+    #team { padding: 3.5rem 0 6rem; }
+    .member-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem; }
+    .member-card { position: relative; background: var(--card); border: 2px solid var(--line); border-radius: 18px; padding: 1.35rem; box-shadow: var(--shadow); }
+    .member-top { display: grid; grid-template-columns: 112px 1fr; gap: 1.1rem; align-items: center; margin-bottom: 1rem; }
+    .portrait { width: 112px; aspect-ratio: 1; object-fit: cover; border: 2px solid var(--line); border-radius: 14px; background: var(--accent-soft); }
+    .member-card h3 { margin: 0 0 .15rem; font-size: 1.55rem; letter-spacing: -.045em; }
+    .degree { color: var(--muted); font-size: .9rem; margin-bottom: .55rem; }
+    .interests { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .pill { background: var(--accent-soft); border-radius: 99px; padding: .16rem .55rem; font-size: .75rem; font-weight: 750; }
+    .fun { border-left: 4px solid var(--accent); padding-left: .75rem; margin: 1rem 0; font-size: .94rem; }
+    .fun strong { color: var(--accent); }
+    .hot-take { display: inline-block; padding: .45rem .7rem; border-radius: 6px; background: var(--lime); color: #1d1d1f; font-weight: 850; font-size: .9rem; transform: rotate(-.7deg); }
+    .profile-link { display: inline-block; margin-top: .8rem; font-size: .88rem; font-weight: 800; }
+    #future-of-se { padding: 5rem 0; background: var(--accent-soft); border-block: 2px solid var(--line); }
+    .manifesto { display: grid; grid-template-columns: .9fr 1.1fr; gap: 3rem; align-items: start; }
+    .manifesto .big-idea { font-size: clamp(1.7rem, 3.8vw, 3.1rem); line-height: 1.12; font-weight: 900; letter-spacing: -.05em; }
+    .manifesto .big-idea em { color: var(--accent); font-style: normal; }
+    .manifesto-copy { font-size: 1.05rem; }
+    .manifesto-copy p { margin-bottom: 1rem; }
+    .tension { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+    .tension div { padding: 1rem; background: var(--card); border: 2px solid var(--line); border-radius: 12px; }
+    .tension strong { display: block; color: var(--accent); margin-bottom: .3rem; }
+    footer { padding: 2rem 0 3rem; display: flex; justify-content: space-between; gap: 1rem; color: var(--muted); font-size: .9rem; }
+    footer strong { color: var(--ink); }
+    @media (max-width: 700px) {
+      .wrap { width: min(100% - 28px, 560px); }
+      .topbar { align-items: flex-start; }
+      .top-actions { flex-direction: column-reverse; align-items: flex-end; gap: .6rem; }
+      .top-actions nav { gap: .65rem; font-size: .8rem; }
+      .hero { padding-top: 3.5rem; }
+      .hero::after { right: -2%; top: 4%; }
+      .section-head { display: block; }
+      .member-grid { grid-template-columns: 1fr; }
+      .manifesto { grid-template-columns: 1fr; gap: 1rem; }
+      .tension { grid-template-columns: 1fr; }
+      footer { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="#top" aria-label="Byte-Sized Brains home">BYTE-SIZED BRAINS ◉</a>
+    <div class="top-actions">
+      <nav aria-label="Main navigation"><a href="#team">The humans</a><a href="#future-of-se">AI forecast</a></nav>
+      <button id="theme-toggle" type="button" aria-label="Switch to night mode">☾ Night mode</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="wrap hero" aria-labelledby="hero-title">
+      <span class="eyebrow">M.Sc. Computer Science · first semester</span>
+      <h1 id="hero-title">Five humans.<br>One <span>rubber duck.</span></h1>
+      <p class="hero-copy">We’re the Byte-Sized Brains: a small lab crew with interests ranging from cloud plumbing to pixel nudging. Currently learning, building, and occasionally asking a duck to explain the bug.</p>
+      <span class="hero-note">Scroll to meet the people behind the pull requests ↓</span>
+    </section>
+
+    <section id="team" class="wrap" aria-labelledby="team-title">
+      <div class="section-head">
+        <div><span class="eyebrow">Cast of characters</span><h2 id="team-title">The humans<br>in the loop</h2></div>
+        <p>All five are M.Sc. Computer Science students in their first semester. Their interests are different; their shared ability to overthink a commit message is implied.</p>
+      </div>
+      <div class="member-grid">
+        <article class="member-card">
+          <div class="member-top"><img class="portrait" src="{{image:Dhruv.png}}" alt="Portrait of Dhruv Savani"><div><h3>Dhruv Savani</h3><p class="degree">M.Sc. Computer Science · 1st semester</p><div class="interests"><span class="pill">Backend</span><span class="pill">Cloud infrastructure</span><span class="pill">Open source</span></div></div></div>
+          <p class="fun"><strong>Terminal ritual:</strong> He can’t start coding until his terminal setup has been reorganized. The code may wait; the prompt must be immaculate.</p>
+          <p class="hot-take">“AI won't replace developers, but developers who ignore it will fall behind those who use it well.”</p>
+          <a class="profile-link" href="https://www.linkedin.com/in/dhruv-savani610/">Find Dhruv on LinkedIn ↗</a>
+        </article>
+
+        <article class="member-card">
+          <div class="member-top"><img class="portrait" src="{{image:harshil.jpg}}" alt="Portrait of Harshil Zadafiya"><div><h3>Harshil Zadafiya</h3><p class="degree">M.Sc. Computer Science · 1st semester</p><div class="interests"><span class="pill">Cybersecurity</span><span class="pill">DevOps</span><span class="pill">Automation</span></div></div></div>
+          <p class="fun"><strong>Efficiency report:</strong> Automates tiny daily tasks—even when doing them by hand would be quicker. The script is the point.</p>
+          <p class="hot-take">“Every line of AI-generated code is a security review waiting to happen.”</p>
+          <a class="profile-link" href="https://www.linkedin.com/in/harshil-zadafiya/">Find Harshil on LinkedIn ↗</a>
+        </article>
+
+        <article class="member-card">
+          <div class="member-top"><img class="portrait" src="{{image:Jevin.png}}" alt="Portrait of Jevin Vaghasiya"><div><h3>Jevin Vaghasiya</h3><p class="degree">M.Sc. Computer Science · 1st semester</p><div class="interests"><span class="pill">Machine learning</span><span class="pill">Mobile apps</span><span class="pill">Competitive programming</span></div></div></div>
+          <p class="fun"><strong>Preferred debugger:</strong> A rubber duck—and, for best results, a full verbal explanation of the problem.</p>
+          <p class="hot-take">“Code is getting cheap; knowing what to build and why is the skill that stays expensive.”</p>
+          <a class="profile-link" href="https://www.linkedin.com/in/jevin-vaghasiya-07b39b24b/">Find Jevin on LinkedIn ↗</a>
+        </article>
+
+        <article class="member-card">
+          <div class="member-top"><img class="portrait" src="{{image:Pooja.png}}" alt="Portrait of Pooja Garg"><div><h3>Pooja Garg</h3><p class="degree">M.Sc. Computer Science · 1st semester</p><div class="interests"><span class="pill">Data science</span><span class="pill">User experience</span><span class="pill">Software testing</span></div></div></div>
+          <p class="fun"><strong>Error-message enthusiast:</strong> Reads them for fun; they often tell her more than the documentation. Finally, someone appreciates the stack trace.</p>
+          <p class="hot-take">“AI writes the code fast; tests decide whether anyone should trust it.”</p>
+          <a class="profile-link" href="https://www.linkedin.com/in/poojagarg-/">Find Pooja on LinkedIn ↗</a>
+        </article>
+
+        <article class="member-card">
+          <div class="member-top"><img class="portrait" src="{{image:Yasik.png}}" alt="Portrait of Yashik Khunt"><div><h3>Yashik Khunt</h3><p class="degree">M.Sc. Computer Science · 1st semester</p><div class="interests"><span class="pill">Web development</span><span class="pill">UI design</span><span class="pill">Data visualization</span></div></div></div>
+          <p class="fun"><strong>Weekend side quest:</strong> Once hunted a bug all weekend that turned out to be one missing semicolon. Tiny mark, enormous villain arc.</p>
+          <p class="hot-take">“Prompting is the new Stack Overflow: useful until you stop understanding the answer.”</p>
+          <a class="profile-link" href="https://www.linkedin.com/in/yashik-khunt/">Find Yashik on LinkedIn ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="future-of-se" aria-labelledby="future-title">
+      <div class="wrap manifesto">
+        <div>
+          <span class="eyebrow">The group forecast</span>
+          <h2 id="future-title">AI gets the keyboard.<br>Humans keep the keys.</h2>
+          <p class="big-idea">Our shared view: AI is a <em>power tool</em>, not an autopilot for judgment.</p>
+        </div>
+        <div class="manifesto-copy">
+          <p>Across the team, AI already helps with boilerplate, prototypes, scripts, tests, explanations, and exploring possible solutions. That means less time typing every line and more time deciding what deserves to exist—and checking whether what got built actually works.</p>
+          <p>In the next 5–10 years, we expect more agents and automation in development, delivery, and quality assurance. Engineers will spend more energy on requirements, architecture, product thinking, reliability, accessibility, and verification. Code may get cheaper; responsibility does not.</p>
+          <div class="tension">
+            <div><strong>Where we agree</strong>AI can accelerate the first draft. People still need to understand, test, and review the result.</div>
+            <div><strong>What we watch closely</strong>Dhruv and Harshil stress reliability and security; Jevin worries about learning by doing; Pooja centers tests and data; Yashik calls out user context and accessibility.</div>
+          </div>
+          <p style="margin-top:1.2rem"><strong>Team policy, unofficial:</strong> Let the machine suggest. Let the humans ask “does this make sense?” Let the tests be the final duck-shaped jury.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap"><span><strong>BYTE-SIZED BRAINS</strong> · Built with curiosity and probably one semicolon</span><span>Built by an agent, supervised by humans.</span></footer>
+
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const page = document.documentElement;
+    const savedTheme = localStorage.getItem('upb-theme');
+    if (savedTheme === 'day' || savedTheme === 'night') page.setAttribute('data-theme', savedTheme);
+    function updateToggle() {
+      const night = page.getAttribute('data-theme') === 'night';
+      toggle.textContent = night ? '☀ Day mode' : '☾ Night mode';
+      toggle.setAttribute('aria-label', night ? 'Switch to day mode' : 'Switch to night mode');
+    }
+    updateToggle();
+    toggle.addEventListener('click', () => {
+      page.setAttribute('data-theme', page.getAttribute('data-theme') === 'night' ? 'day' : 'night');
+      localStorage.setItem('upb-theme', page.getAttribute('data-theme'));
+      updateToggle();
+    });
+  </script>
+</body>
+</html>
