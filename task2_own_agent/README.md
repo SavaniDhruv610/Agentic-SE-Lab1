@@ -162,3 +162,14 @@ in the history; older ones are replaced by a one-line note. This keeps the promp
 
 **Logs.** `LLMClient` logs every request and response. We add one `observation` event per step (with step number
 and action), plus `run_start`, `human_feedback`, `error` and `run_end`.
+
+## Known limitations
+
+- A cut-off reply is only detected through the unclosed code block; we do not read `finish_reason` from the API.
+- The checker tests the presence of values and markup, not the look of the page. A page can pass and still be
+  ugly; that is what the human feedback step is for.
+- Retrieval is purely dense. Queries with exact identifiers would profit from a keyword component.
+- The model chooses its own queries. If it never asks about a topic, it never sees the rule, and only finds out
+  through a failed check.
+- Feedback restarts the step limit; there is no overall limit across feedback rounds.
+
